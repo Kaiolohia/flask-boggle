@@ -1,0 +1,32 @@
+{% extends "base.html" %} 
+{% block title %} Boggle {% endblock %} 
+{% block content%}
+<h1>Boggle</h1>
+<hr/>
+
+<table>
+    <tbody>
+    {% for row in board %}
+    <tr>
+        {% for letter in row%}
+        <td>{{letter}}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<p >Score: <span id="score">0</span></p>
+<p >Time: <span id="time">60</span> seconds</p>
+<p>High Score: <span id="highscore">0</span> in <span id="plays">0</span> plays!</p>
+
+<p id="result"></p>
+<hr>
+<form id="input-form">
+    <label>Find any words?</label>
+    <input type="text" name="user-input" id="user-input">
+    <button>Submit!</button>
+</form>
+<h2 id="end" style="display: none;">Times up!</h2>
+<h2 id="nhighscore" style="display: none;">New highscore!</h2>
+
+{% endblock%}
